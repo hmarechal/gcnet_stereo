@@ -1,0 +1,49 @@
+{
+  "dataset": {
+    "name": "kitti",
+    "width": 1242,
+    "height": 375,
+    "channels": 3,
+    "dataset_root": "/home/herve/datasets/",
+    "dataset_path": "kitti/data_scene_flow/",
+    "x_id": null,
+    "y_id": null,
+    "x_train_id": [["training/images2/*_10.png", "training/images3/*_10.png"]],
+    "y_train_id": [["training/disp_occ_0/*_10.png"]],
+    "x_val_id": null,
+    "y_val_id": null,
+    "x_test_id": [["testing/images2/*_10.png", "testing/images3/*_10.png"]],
+    "y_test_id": [["testing/disp_occ_0/*_10.png"]],
+    "train_val_test_ratios": null
+  },
+  "preprocessing" : {
+    "ZeroPadding2D": {
+      "padding": [5, 4, 14, 14],
+      "data_format": "channels_first"
+    },
+    "crop": {
+      "random_crop": "False",
+      "crop_start_row": 12,
+      "crop_start_col": 14,
+      "crop_width": 1216,
+      "crop_height": 320
+    },
+    "resize": {
+      "output_shape": [640, 192]
+    }
+  },
+  "model": {
+    "model_name": "gcnet_stereo",
+    "max_disparity": 192,
+    "model_input_width": 480,
+    "model_input_height": 256,
+    "model_input_depth": 3
+  },
+  "learning": {
+    "batch_size": 1,
+    "num_epochs" : 50,
+    "shuffle": "True",
+    "learning_rate" : 0.001,
+    "momentum" : 0.9
+  }
+}

@@ -1,0 +1,16 @@
+(lp1
+((V/home/herve/datasets/SceneFlow/VeryFast/frames_cleanpass/left/0480.png
+V/home/herve/datasets/SceneFlow/VeryFast/frames_cleanpass/right/0480.png
+tp2
+(V/home/herve/datasets/SceneFlow/VeryFast/disparity/left/0480.pfm
+V/home/herve/datasets/SceneFlow/VeryFast/disparity/right/0480.pfm
+tp3
+tp4
+a((V/home/herve/datasets/SceneFlow/VeryFast/frames_cleanpass/left/0240.png
+V/home/herve/datasets/SceneFlow/VeryFast/frames_cleanpass/right/0240.png
+tp5
+(V/home/herve/datasets/SceneFlow/VeryFast/disparity/left/0240.pfm
+V/home/herve/datasets/SceneFlow/VeryFast/disparity/right/0240.pfm
+tp6
+tp7
+a.

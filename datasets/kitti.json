@@ -1,0 +1,25 @@
+{
+  "dataset": {
+    "name": "kitti",
+    "width": 1242,
+    "height": 375,
+    "channels": 3
+  },
+  "location": {
+    "dataset_root": "/home/herve/datasets/",
+    "dataset_path": "Kitti/data_scene_flow/"
+  },
+  "data": {
+    "x_id": null,
+    "y_id": null,
+    "x_train_id": [["training/images2/*_10.png", "training/images3/*_10.png"]],
+    "y_train_id": [["training/disp_occ_0/*_10.png"]],
+    "x_val_id": null,
+    "y_val_id": null,
+    "x_test_id": [["testing/images2/*_10.png", "testing/images3/*_10.png"]],
+    "y_test_id": [["testing/disp_occ_0/*_10.png"]]
+  },
+  "cross_validation": {
+    "train_val_test_ratios": null
+  }
+}

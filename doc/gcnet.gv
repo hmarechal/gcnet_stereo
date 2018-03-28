@@ -1,0 +1,279 @@
+digraph {
+//	orientation = landscape;
+
+	/* Nodes declarations */	
+	left_input [shape=box, label="Left Input\n960x540x3"];
+	right_input [shape=box, label="Right Input\n960x540x3"];
+	
+	left_layer_1 [shape=box, label="Conv1 5x5, stride=2"];
+	
+	left_bn_1 [shape=box, label="BN"];
+	left_relu_1 [shape=box, label="ReLU"];
+	left_layer_2 [shape=box, label="Conv2\n3x3"];
+	left_bn_2 [shape=box, label="BN"];
+	left_relu_2 [shape=box, label="ReLU"];
+	left_layer_3 [shape=box, label="Conv3 3x3"];
+	add_left_layer_1 [label="+"];
+	
+	left_layer_4 [shape=box, label="left_layer_4\nconv2d 3x3, 32 features\n480x270"];
+	left_layer_5 [shape=box, label="left_layer_5\nconv2d 3x3, 32 features\n480x270"];
+	add_left_layer_2 [label="+"];
+	left_layer_6 [shape=box, label="left_layer_6\nconv2d 3x3, 32 features\n480x270"];
+	left_layer_7 [shape=box, label="left_layer_7\nconv2d 3x3, 32 features\n480x270"];
+	add_left_layer_3 [label="+"];
+	left_layer_8 [shape=box, label="left_layer_8\nconv2d 3x3, 32 features\n480x270"];
+	left_layer_9 [shape=box, label="left_layer_9\nconv2d 3x3, 32 features\n480x270"];
+	add_left_layer_4 [label="+"];
+	left_layer_10 [shape=box, label="left_layer_10\nconv2d 3x3, 32 features\n480x270"];
+	left_layer_11 [shape=box, label="left_layer_11\nconv2d 3x3, 32 features\n480x270"];
+	add_left_layer_5 [label="+"];
+	left_layer_12 [shape=box, label="left_layer_12\nconv2d 3x3, 32 features\n480x270"];
+	left_layer_13 [shape=box, label="left_layer_13\nconv2d 3x3, 32 features\n480x270"];
+	add_left_layer_6 [label="+"];
+	left_layer_14 [shape=box, label="left_layer_14\nconv2d 3x3, 32 features\n480x270"];
+	left_layer_15 [shape=box, label="left_layer_15\nconv2d 3x3, 32 features\n480x270"];
+	add_left_layer_7 [label="+"];
+	left_layer_16 [shape=box, label="left_layer_16\nconv2d 3x3, 32 features\n480x270"];
+	left_layer_17 [shape=box, label="left_layer_17\nconv2d 3x3, 32 features\n480x270"];
+	add_left_layer_8 [label="+"];
+	left_layer_18 [shape=box, label="left_layer_18\nconv2d 3x3, 32 features\n480x270"];
+	
+	right_layer_1 [shape=box, label="right_layer_1\nconv2d 5x5, stride=2\n480x270"];
+	right_layer_2 [shape=box, label="right_layer_2\nconv2d 3x3, 32 features\n480x270"];
+	right_layer_3 [shape=box, label="right_layer_3\nconv2d 3x3, 32 features\n480x270"];
+	add_right_layer_1 [label="+"];
+	right_layer_4 [shape=box, label="right_layer_4\nconv2d 3x3, 32 features\n480x270"];
+	right_layer_5 [shape=box, label="right_layer_5\nconv2d 3x3, 32 features\n480x270"];
+	add_right_layer_2 [label="+"];
+	right_layer_6 [shape=box, label="right_layer_6\nconv2d 3x3, 32 features\n480x270"];
+	right_layer_7 [shape=box, label="right_layer_7\nconv2d 3x3, 32 features\n480x270"];
+	add_right_layer_3 [label="+"];
+	right_layer_8 [shape=box, label="right_layer_8\nconv2d 3x3, 32 features\n480x270"];
+	right_layer_9 [shape=box, label="right_layer_9\nconv2d 3x3, 32 features\n480x270"];
+	add_right_layer_4 [label="+"];
+	right_layer_10 [shape=box, label="right_layer_10\nconv2d 3x3, 32 features\n480x270"];
+	right_layer_11 [shape=box, label="right_layer_11\nconv2d 3x3, 32 features\n480x270"];
+	add_right_layer_5 [label="+"];
+	right_layer_12 [shape=box, label="right_layer_12\nconv2d 3x3, 32 features\n480x270"];
+	right_layer_13 [shape=box, label="right_layer_13\nconv2d 3x3, 32 features\n480x270"];
+	add_right_layer_6 [label="+"];
+	right_layer_14 [shape=box, label="right_layer_14\nconv2d 3x3, 32 features\n480x270"];
+	right_layer_15 [shape=box, label="right_layer_15\nconv2d 3x3, 32 features\n480x270"];
+	add_right_layer_7 [label="+"];
+	right_layer_16 [shape=box, label="right_layer_16\nconv2d 3x3, 32 features\n480x270"];
+	right_layer_17 [shape=box, label="right_layer_17\nconv2d 3x3, 32 features\n480x270"];
+	add_right_layer_8 [label="+"];
+	right_layer_18 [shape=box, label="right_layer_18\nconv2d 3x3, 32 features\n480x270"];
+	
+	cost_volume [shape=box, label="Cost Volume\n480x270x96"];
+	
+	layer_19 [shape=box, label="layer_19\nconv3d 3x3, 32 features\n480x270x96"];
+	layer_20 [shape=box, label="layer_20\nconv3d 3x3, 32 features\n480x270x96"];
+	layer_21 [shape=box, label="layer_21\nconv3d 3x3, 32 features, stride=2\n240x135x48"];
+	layer_22 [shape=box, label="layer_22\nconv3d 3x3, 32 features\n240x135x48"];
+	layer_23 [shape=box, label="layer_23\nconv3d 3x3, 32 features\n240x135x48"];
+	layer_24 [shape=box, label="layer_24\nconv3d 3x3, 32 features, stride=2\n120x68x24"];
+	layer_25 [shape=box, label="layer_25\nconv3d 3x3, 32 features\n120x68x24"];
+	layer_26 [shape=box, label="layer_26\nconv3d 3x3, 32 features\n120x68x24"];
+	layer_27 [shape=box, label="layer_27\nconv3d 3x3, 32 features, stride=2\n60x34x12"];
+	layer_28 [shape=box, label="layer_28\nconv3d 3x3, 32 features\n60x34x12"];
+	layer_29 [shape=box, label="layer_29\nconv3d 3x3, 32 features\n60x34x12"];
+	layer_30 [shape=box, label="layer_30\nconv3d 3x3, 32 features, stride=2\n30x17x6"];
+	layer_31 [shape=box, label="layer_31\nconv3d 3x3, 32 features\n30x17x6"];
+	layer_32 [shape=box, label="layer_32\nconv3d 3x3, 32 features\n30x17x6"];
+	
+	layer_33 [shape=box, label="layer_33\ndeconv3d 3x3, 32 features, stride=2\n60x34x12"];
+	layer_34 [shape=box, label="layer_34\ndeconv3d 3x3, 32 features, stride=2\n120x68x24"];
+	layer_35 [shape=box, label="layer_35\ndeconv3d 3x3, 32 features, stride=2\n240x136x48"];
+	layer_36 [shape=box, label="layer_36\ndeconv3d 3x3, 32 features, stride=2\n480x272x96"];
+	add_layer_9 [label="+"];
+	add_layer_10 [label="+"];
+	add_layer_11 [label="+"];
+	add_layer_12 [label="+"];
+	
+	layer_37 [shape=box, label="layer_37\ndeconv3d 3x3, 32 features, no ReLU, no BN\n960x544x192"];
+	layer_38 [shape=box, label="layer_38, SoftArgMin"];
+
+	
+	/* GRAPH START */
+	left_input -> left_layer_1;
+	right_input -> right_layer_1;
+
+	/* LEFT CAMERA UNARY TERM */
+	subgraph cluster0 {
+		style = filled;
+		color=lightgrey;
+		label = "left";
+		
+		left_layer_1 -> left_bn_1 [label=" 480x270x32"];
+		subgraph cluster20 {
+			label = "residual block";
+			style = filled;
+			color = white;
+			left_bn_1 ->left_relu_1;
+			left_relu_1 -> left_layer_2;
+			left_layer_2 -> left_bn_2 [label=" 480x270x32"];
+			left_bn_2 ->left_relu_2;
+			left_relu_2 -> left_layer_3;
+		}
+		
+		left_layer_3 -> add_left_layer_1 [label=" 480x270x32"];
+		left_layer_1 -> add_left_layer_1 [label=" residual connection"];
+		add_left_layer_1 -> left_layer_4;
+
+		left_layer_4 -> left_layer_5;
+		left_layer_5 -> add_left_layer_2;
+		add_left_layer_1 -> add_left_layer_2;
+		add_left_layer_2 -> left_layer_6;
+
+		left_layer_6 -> left_layer_7;
+		left_layer_7 -> add_left_layer_3;
+		add_left_layer_2 -> add_left_layer_3;
+		add_left_layer_3 -> left_layer_8;
+
+		left_layer_8 -> left_layer_9;
+		left_layer_9 -> add_left_layer_4;
+		add_left_layer_3 -> add_left_layer_4;
+		add_left_layer_4 -> left_layer_10;
+
+		left_layer_10 -> left_layer_11;
+		left_layer_11 -> add_left_layer_5;
+		add_left_layer_4 -> add_left_layer_5;
+		add_left_layer_5 -> left_layer_12;
+
+		left_layer_12 -> left_layer_13;
+		left_layer_13 -> add_left_layer_6;
+		add_left_layer_5 -> add_left_layer_6;
+		add_left_layer_6 -> left_layer_14;
+
+		left_layer_14 -> left_layer_15;
+		left_layer_15 -> add_left_layer_7;
+		add_left_layer_6 -> add_left_layer_7;
+		add_left_layer_7 -> left_layer_16;
+
+		left_layer_16 -> left_layer_17;
+		left_layer_17 -> add_left_layer_8;
+		add_left_layer_7 -> add_left_layer_8;
+		add_left_layer_8 -> left_layer_18;
+	}
+	
+	/* RIGHT CAMERA UNARY TERM */
+	subgraph cluster1 {
+		//style = filled;
+		//color=lightgrey;
+		label = "right";
+		
+		right_layer_1 -> right_layer_2;
+
+		right_layer_2 -> right_layer_3;
+		right_layer_3 -> add_right_layer_1;
+		right_layer_1 -> add_right_layer_1;
+		add_right_layer_1 -> right_layer_4;
+
+		right_layer_4 -> right_layer_5;
+		right_layer_5 -> add_right_layer_2;
+		add_right_layer_1 -> add_right_layer_2;
+		add_right_layer_2 -> right_layer_6;
+
+		right_layer_6 -> right_layer_7;
+		right_layer_7 -> add_right_layer_3;
+		add_right_layer_2 -> add_right_layer_3;
+		add_right_layer_3 -> right_layer_8;
+
+		right_layer_8 -> right_layer_9;
+		right_layer_9 -> add_right_layer_4;
+		add_right_layer_3 -> add_right_layer_4;
+		add_right_layer_4 -> right_layer_10;
+
+		right_layer_10 -> right_layer_11;
+		right_layer_11 -> add_right_layer_5;
+		add_right_layer_4 -> add_right_layer_5;
+		add_right_layer_5 -> right_layer_12;
+
+		right_layer_12 -> right_layer_13;
+		right_layer_13 -> add_right_layer_6;
+		add_right_layer_5 -> add_right_layer_6;
+		add_right_layer_6 -> right_layer_14;
+
+		right_layer_14 -> right_layer_15;
+		right_layer_15 -> add_right_layer_7;
+		add_right_layer_6 -> add_right_layer_7;
+		add_right_layer_7 -> right_layer_16;
+
+		right_layer_16 -> right_layer_17;
+		right_layer_17 -> add_right_layer_8;
+		add_right_layer_7 -> add_right_layer_8;
+		add_right_layer_8 -> right_layer_18;
+	}
+
+	left_layer_18 -> cost_volume;
+	right_layer_18 -> cost_volume;
+	cost_volume -> layer_19;
+	cost_volume -> layer_21;
+	
+	/* 3D CONVOLUTION LAYERS */
+	subgraph cluster10 {
+		ordering = out;
+		label = "Multi-scale 3D Convolutions"
+		subgraph cluster2 {
+			style=filled;
+			label="cluster2"
+			layer_19 -> layer_20;
+		}
+		
+		//layer_18 -> layer_21;
+		
+		subgraph cluster3 {
+			style=filled;
+			label="cluster3"
+			layer_21 -> layer_22;
+			layer_22 -> layer_23;
+		}
+
+		layer_21 -> layer_24;
+		subgraph cluster4 {
+			style=filled;
+			label="cluster4"
+			layer_24 -> layer_25;
+			layer_25 -> layer_26;
+		}
+
+		layer_24 -> layer_27;
+		subgraph cluster5 {
+			style=filled;
+			label="cluster5"
+			layer_27 -> layer_28;
+			layer_28 -> layer_29;
+		}
+
+		layer_27 -> layer_30;
+		subgraph cluster6 {
+			style=filled;
+			label="cluster6"
+			layer_30 -> layer_31;
+			layer_31 -> layer_32;
+		}
+	}
+	
+
+	/* 3D DECONVOLUTION LAYERS */
+	layer_32 -> layer_33;
+	layer_33 -> add_layer_9;
+	layer_29 -> add_layer_9;
+	
+	add_layer_9 -> layer_34;
+	layer_34 -> add_layer_10;
+	layer_26 -> add_layer_10;
+
+	add_layer_10 -> layer_35;
+	layer_35 -> add_layer_11;
+	layer_23 -> add_layer_11;
+	
+	add_layer_11 -> layer_36;
+	layer_36 -> add_layer_12;
+	layer_20 -> add_layer_12;
+	
+	add_layer_12 -> layer_37;
+	
+	layer_37 -> layer_38;
+}
